@@ -34,6 +34,25 @@ def setup_driver():
 
 
 def get_item_info():
+    """
+    Retrieve item information from the Lazada website.
+
+    This function navigates through multiple pages of Lazada's product listings,
+    collecting URLs for individual items. It handles potential pop-ups and
+    scrolls through the page to load more items.
+
+    The function uses Selenium to interact with the web page, clicking through
+    pagination and avoiding interruptions like QR code prompts or pop-up windows.
+
+    Returns:
+        list: A list of URLs for individual product pages on Lazada.
+
+    Note:
+        This function assumes that the WebDriver (driver) has already been set up
+        and the initial page has been loaded. It also assumes specific XPaths and
+        CSS selectors for elements on the Lazada website, which may need to be
+        updated if the website structure changes.
+    """
     df = []
     for _ in range(1, 50):
         try:
