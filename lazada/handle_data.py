@@ -91,7 +91,7 @@ def main():
 
     for f in csv_file_path:
         # Read CSV data
-        data = read_csv_data(f)
+        data = read_csv_data('data/' + f)
         lst = process_data_lazada(data)
         if lst is not None:
             # Write processed data to text file
@@ -139,7 +139,7 @@ def export_data():
     # Define file paths
     csv_file_path = ['comments_data_gbn.csv', 'comments_data_gln.csv', 'comments_data_gsn.csv',
                      'comments_data_gtcs.csv', 'comments_data_ncds.csv']
-    output_file_path = 'output2.txt'
+    output_file_path = 'output.txt'
     for f in csv_file_path:
         # Read CSV data
         data = read_csv_data('data/' + f)
